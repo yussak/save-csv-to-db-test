@@ -5,7 +5,10 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     git \
     unzip \
-    && docker-php-ext-install pdo pdo_pgsql
+    zlib1g-dev \
+    libpng-dev \
+    libzip-dev \
+    && docker-php-ext-install pdo pdo_pgsql gd zip
 
 # Composerをインストール
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
