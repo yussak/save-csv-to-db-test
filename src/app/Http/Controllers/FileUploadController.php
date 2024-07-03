@@ -9,19 +9,16 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class FileUploadController extends Controller
 {
-    // いい感じのテスト用エクセルシート作る（分かる範囲で　複数シートにしたり）->とりあえずDONE
-    // DBにインポート可能にする->DONE
-    // file not foundエラー出るので修正->DONE
-    // テスト用シートでDB migrateする->DONE
-    // ヘッダー無視->DONE
-    // 列が25個と多いので対処。本来なら5→これ問題ないかもしれないな。とりあえずこの状態でインポートしてみる
+    // Booksテーブルにインポート可能にする->done
+    // ヘッダー無視->done
     // ファイル削除（必要なら）->現状必要ないので実装していない
-    // 空のrowをskip->DONE
-    // エラーハンドリング追加　拡張子の分
-    // エラーハンドリング追加　その他の分
-    // フラッシュメッセージ出したい
+    // 空のrowをskip->done
+    // フラッシュメッセージ出したい->メッセージ自体は出せているので優先度低い
 
-    // エクセル、CSVどちらでやるか->ライブラリが使えるエクセルでいいと思う
+    // 値の重複チェック
+    // 複数シートを個別のテーブルに保存できるようにする
+
+    // テスト実装->これ次にやるべき
 
     public function uploadFile(Request $request)
     {

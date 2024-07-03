@@ -21,7 +21,6 @@ class CreateBooksTable extends Migration
             $table->date("published_at")->nullable(true);
             $table->date("increased_at")->nullable(true);
             $table->integer("earnings")->nullable(true);
-            // $table->timestamps();
         });
     }
 
