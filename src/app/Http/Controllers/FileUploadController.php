@@ -30,8 +30,6 @@ class FileUploadController extends Controller
             throw new Exception(".xlsxのファイルをアップロードしてください");
         }
 
-        $fileName = $file->getClientOriginalName();
-
         try {
             Excel::import(new BooksImport, $file);
         } catch (Exception $e) {
