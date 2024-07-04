@@ -8,6 +8,7 @@ class Book extends Model
 {
     public $timestamps = false;
     protected $fillable = [
+        "author_id",
         "title",
         "author",
         "company",
