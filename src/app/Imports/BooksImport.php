@@ -20,7 +20,9 @@ class BooksImport implements ToModel, WithStartRow, WithBatchInserts, SkipsEmpty
     public function model(array $row)
     {
         $isExists = DB::table("books")->where("author_id", $row[0])->exists();
-        if ($isExists) return null;
+        if ($isExists) {
+            return null;
+        }
 
         return new Book([
             "author_id" => $row[0],

@@ -31,7 +31,7 @@ class FileUploadController extends Controller
         }
 
         try {
-            Excel::import(new BooksImport, $file);
+            Excel::import(new BooksImport(), $file);
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
