@@ -40,6 +40,16 @@ services:
     networks:
       - app-network
 
+  test_db:
+    image: postgres:13
+    container_name: test_db
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: laravel
+      POSTGRES_PASSWORD: secret
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
