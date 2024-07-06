@@ -30,11 +30,10 @@ class FileUploadController extends Controller
             throw new Exception(".xlsxのファイルをアップロードしてください");
         }
 
-        try {
-            Excel::import(new BooksImport(), $file);
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
+        // The entire import is automatically wrapped in a database transaction とあるので別途トランザクション書かなくていい
+        // https://docs.laravel-excel.com/3.1/imports/validation.html#handling-validation-errors
+        // try catchなくても正しくエラーでた
+        Excel::import(new BooksImport(), $file);
 
         return redirect("upload")->with("message", "ok");
     }
